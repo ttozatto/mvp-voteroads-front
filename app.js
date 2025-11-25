@@ -64,7 +64,7 @@ async function loadProjects() {
       if (proj.created_at) {
         try {
           var d = new Date(proj.created_at);
-          dateEl.textContent = d.toLocaleString();
+          dateEl.textContent = d.toLocaleDateString();
         } catch (e) {
           dateEl.textContent = proj.created_at;
         }
@@ -126,7 +126,7 @@ async function loadProjectDetails(name) {
     if (proj.created_at) {
       try {
         var d = new Date(proj.created_at);
-        createdEl.textContent = "Criado em: " + d.toLocaleString();
+        createdEl.textContent = "Criado em: " + d.toLocaleDateString();
       } catch (e) {
         createdEl.textContent = "Criado em: " + proj.created_at;
       }
@@ -172,10 +172,10 @@ async function loadProjectDetails(name) {
         fVotes.textContent =
           f.votes !== undefined ? String(f.votes) : "0";
 
-        var fDate = document.createElement("div");
+        var fDate = document.createElement("small");
         fDate.className = "feature-extra";
         fDate.textContent = f.created_at
-          ? new Date(f.created_at).toLocaleString()
+          ? new Date(f.created_at).toLocaleDateString()
           : "(sem data)";
 
         fDiv.appendChild(header);
