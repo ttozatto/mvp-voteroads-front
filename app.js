@@ -332,7 +332,18 @@ async function loadFeatureForm(selectedProject) {
   form.projectName = selectedProject;
 }
 
-// Event listeners
+document.addEventListener("click", (e) => {
+  if (
+    e.target.classList.contains("vote-btn") ||
+    e.target.classList.contains("project-item")
+  ) {
+    const el = e.target;
+    el.classList.remove("clicked");
+    void el.offsetWidth;
+    el.classList.add("clicked");
+  }
+});
+
 document
   .getElementById("newProjectForm")
   .addEventListener("submit", handleNewProjectSubmit);
@@ -340,5 +351,4 @@ document
   .getElementById("newFeatureForm")
   .addEventListener("submit", handleNewFeatureSubmit);
 
-// Carrega projetos automaticamente ao abrir a página
 loadProjects();
