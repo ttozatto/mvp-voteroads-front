@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Roadmaps</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Roadmaps</h1>
+      </div>
+    </header>
+
+    <main>
+      <!-- Coluna esquerda: lista e criação -->
+      <section>
+        <div class="card">
+          <h2>Projetos</h2>
+          <button class="btn" id="loadProjectsBtn">Listar projetos</button>
+          <div id="projectsStatus" class="status-message"></div>
+          <div
+            id="projectsList"
+            class="projects-list"
+            aria-label="Lista de projetos"
+          ></div>
+        </div>
+
+        <div class="card">
+          <h2>Novo projeto</h2>
+          <form id="newProjectForm">
+            <label>
+              Nome do projeto
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Descrição
+              <textarea name="description" required></textarea>
+            </label>
+            <button class="btn" type="submit">Criar Projeto</button>
+            <div id="newProjectStatus" class="status-message"></div>
+          </form>
+        </div>
+
+        <div class="card" id="newFeatureCard" style="visibility: hidden">
+          <h2>Nova feature</h2>
+          <form id="newFeatureForm">
+            <label>
+              Nome da feature
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Descrição da feature
+              <textarea name="description" required></textarea>
+            </label>
+            <label>
+              Status
+              <select name="status">
+                <option value="Idea">Idea</option>
+                <option value="Planned">Planned</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+              </select>
+            </label>
+            <button class="btn" type="submit">Adicionar Feature</button>
+            <div id="newFeatureStatus" class="status-message"></div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Coluna direita: detalhes -->
+      <section>
+        <div class="card">
+          <h2>Detalhes do projeto</h2>
+          <div id="project-details-empty">
+            Selecione um projeto na lista para ver detalhes.
+          </div>
+          <div id="projectDetails" style="display: none">
+            <h3 id="projectName"></h3>
+            <small id="projectCreatedAt"></small>
+            <p id="projectDescription"></p>
+
+            <h3>Features</h3>
+            <div id="projectFeatures"></div>
+
+            <div id="kanbanContainer" class="kanban-columns">
+              <div class="kanban-column" id="kanban-idea">
+                <h4>Idea</h4>
+                <div class="kanban-features" id="features-idea"></div>
+              </div>
+              <div class="kanban-column" id="kanban-planned">
+                <h4>Planned</h4>
+                <div class="kanban-features" id="features-planned"></div>
+              </div>
+              <div class="kanban-column" id="kanban-in-progress">
+                <h4>In Progress</h4>
+                <div class="kanban-features" id="features-in-progress"></div>
+              </div>
+              <div class="kanban-column" id="kanban-done">
+                <h4>Done</h4>
+                <div class="kanban-features" id="features-done"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
