@@ -334,9 +334,6 @@ async function loadFeatureForm(selectedProject) {
 
 // Event listeners
 document
-  .getElementById("loadProjectsBtn")
-  .addEventListener("click", loadProjects);
-document
   .getElementById("newProjectForm")
   .addEventListener("submit", handleNewProjectSubmit);
 document
