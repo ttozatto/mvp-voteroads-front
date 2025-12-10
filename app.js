@@ -15,9 +15,7 @@ async function fetchJson(method, path, options) {
   let data = null;
   try {
     data = await res.json();
-  } catch (e) {
-    // pode não ser JSON (ex: 302 ou vazio)
-  }
+  } catch (e) {}
   return { ok: res.ok, status: res.status, data: data };
 }
 
@@ -137,8 +135,7 @@ async function loadProjectDetails(name) {
 
     var feats = proj.features || [];
     if (!feats.length) {
-      featuresEl.innerHTML =
-        "<div style='font-size:13px;color:#6b7280;'>Nenhuma feature cadastrada.</div>";
+      featuresEl.innerHTML = "<small>Nenhuma feature cadastrada.</small>";
     } else {
       feats.forEach(function (f) {
         var fDiv = document.createElement("div");
@@ -169,8 +166,7 @@ async function loadProjectDetails(name) {
         fVotes = document.createElement("div");
         fVotes.id = "featureVotes-" + f.name;
         fVotes.className = "vote-value";
-        fVotes.textContent =
-          f.votes !== undefined ? String(f.votes) : "0";
+        fVotes.textContent = f.votes !== undefined ? String(f.votes) : "0";
 
         var fDate = document.createElement("small");
         fDate.className = "feature-extra";
@@ -194,7 +190,7 @@ async function loadProjectDetails(name) {
         btnVoteDown.onclick = function () {
           handleVoteFeature(proj.name, f.name, -1);
         };
-        
+
         fRight.appendChild(btnVoteUp);
         fRight.appendChild(fVotes);
         fRight.appendChild(btnVoteDown);
@@ -322,7 +318,7 @@ async function handleNewFeatureSubmit(event) {
   } catch (err) {
     setStatus(statusEl, "Erro de rede: " + err.message, false);
   }
-};
+}
 
 async function loadFeatureForm(selectedProject) {
   var card = document.getElementById("newFeatureCard");

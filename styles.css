@@ -10,8 +10,6 @@ body {
   color: #111;
 }
 
-/* ---------------- LINKS / TEXTO ---------------- */
-
 a {
   color: #4f46e5;
   text-decoration: none;
@@ -21,8 +19,9 @@ a:hover {
   text-decoration: underline;
 }
 
-/* títulos com hierarquia retrô */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
@@ -32,8 +31,6 @@ h4 {
   margin-block: 0.5rem;
   font-weight: 700;
 }
-
-/* ---------------- HEADER ---------------- */
 
 header {
   background: #111827;
@@ -53,7 +50,6 @@ header h1 {
   margin: 0;
 }
 
-/* input de base URL */
 .base-url input {
   padding: 4px 8px;
   border: 2px solid #4b5563;
@@ -61,8 +57,6 @@ header h1 {
   color: #f9fafb;
   box-shadow: 2px 2px 0 #000;
 }
-
-/* ---------------- MAIN GRID ---------------- */
 
 main {
   padding: 16px 24px 32px;
@@ -78,8 +72,6 @@ main {
   }
 }
 
-/* ---------------- RETRO CARDS ---------------- */
-
 .card {
   background: #ffffff;
   padding: 20px;
@@ -88,7 +80,6 @@ main {
   box-shadow: 3px 3px 0 #000;
 }
 
-/* barra / linha retrô sob o título do card */
 .card h2 {
   margin-block: 0 0.75rem;
   border-bottom: 1px dashed #000;
@@ -105,8 +96,6 @@ main {
   font-size: 14px;
 }
 
-/* ---------------- PROJECT LIST ---------------- */
-
 .projects-list {
   max-height: 400px;
   overflow-y: auto;
@@ -122,10 +111,9 @@ main {
   border: 2px solid #000;
   background: #fff;
   margin: 0.4rem 0;
-
-  /* camada menor de sombra */
   box-shadow: 1px 1px 0 #000;
-  transition: transform 80ms steps(2), box-shadow 80ms steps(2), background-color 120ms ease-out;
+  transition: transform 80ms steps(2), box-shadow 80ms steps(2),
+    background-color 120ms ease-out;
 }
 
 .project-item:hover {
@@ -137,12 +125,9 @@ main {
   outline-offset: -2px;
 }
 
-
 #projectName {
   color: #4f46e5;
 }
-
-/* ---------------- BUTTONS RETRÔ ---------------- */
 
 .btn {
   display: inline-flex;
@@ -159,7 +144,7 @@ main {
   font-weight: bold;
   box-shadow: 3px 3px 0 #000;
   transition: transform 80ms steps(2), box-shadow 80ms steps(2),
-              background-color 120ms ease-out, color 120ms ease-out;
+    background-color 120ms ease-out, color 120ms ease-out;
 }
 
 .btn.secondary {
@@ -184,8 +169,6 @@ main {
   cursor: default;
   box-shadow: 2px 2px 0 #333;
 }
-
-/* ---------------- FORMS ---------------- */
 
 label {
   font-size: 13px;
@@ -214,14 +197,11 @@ textarea {
   resize: vertical;
 }
 
-/* linha pontilhada separando blocos dentro dos cards (quando usar <hr>) */
 hr {
   border: 0;
   border-bottom: 1px dashed #000;
   margin: 0.75rem 0;
 }
-
-/* ---------------- FEATURE ITEMS ---------------- */
 
 .feature-body {
   font-size: 13px;
@@ -260,15 +240,13 @@ hr {
   justify-items: start;
 }
 .feature-desc {
-    margin-block: .5rem;
-    margin-inline-end: .5rem;
+  margin-block: 0.5rem;
+  margin-inline-end: 0.5rem;
 }
 
 .feature-extra {
-    margin-inline-end: .5rem;
+  margin-inline-end: 0.5rem;
 }
-
-/* ---------------- KANBAN ---------------- */
 
 .kanban-container {
   display: flex;
@@ -286,15 +264,12 @@ hr {
   box-shadow: 3px 3px 0 #000;
 }
 
-/* título da coluna kanban */
 .kanban-column > h3 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   border-bottom: 1px dashed #000;
   padding-bottom: 4px;
 }
-
-/* ---------------- VOTE BUTTON ---------------- */
 
 .vote-value {
   font-weight: bold;
@@ -313,7 +288,7 @@ hr {
 
   box-shadow: 1px 1px 0 #000;
   transition: transform 80ms steps(2), box-shadow 80ms steps(2),
-              background-color 120ms ease-out;
+    background-color 120ms ease-out;
 }
 
 .vote-btn:hover {
@@ -322,14 +297,12 @@ hr {
   box-shadow: 2px 2px 0 #000;
 }
 
-/* clique "afundando" */
 .vote-btn:active,
 .project-item:active {
   transform: translate(1px, 1px);
   box-shadow: 1px 1px 0 #000;
 }
 
-/* flash retrô ao soltar (classe adicionada via JS) */
 .vote-btn.clicked,
 .project-item.clicked {
   animation: vote-flash 180ms;
@@ -340,7 +313,7 @@ hr {
     background: #e0e7ff;
   }
   50% {
-    background: #fff176; /* amarelo retrô */
+    background: #fff176;
   }
   100% {
     background: #e0e7ff;
